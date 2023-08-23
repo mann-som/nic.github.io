@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Edit Admission{% endblock %}
+
+{% block content %}
+    <h1 class="header">Edit Admission</h1>
+    <form action="{{ url_for('edit_admission', id=admission_entry['id']) }}" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ admission_entry['name'] }}" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ admission_entry['email'] }}" required>
+
+        <label for="course">Course:</label>
+        <select id="course" name="course" required>
+            <option value="science" {% if admission_entry['course'] == 'science' %}selected{% endif %}>Science</option>
+            <option value="arts" {% if admission_entry['course'] == 'arts' %}selected{% endif %}>Arts</option>
+            <option value="commerce" {% if admission_entry['course'] == 'commerce' %}selected{% endif %}>Commerce</option>
+        </select>
+
+        <button class="btn" type="submit">Save Changes</button>
+    </form>
+{% endblock %}

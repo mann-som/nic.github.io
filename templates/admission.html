@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Admission{% endblock %}
+
+{% block content %}
+    <h1 class="header">Admission Page</h1>
+    <p>Welcome to our admission page! Please fill out the form below to apply for admission.</p>
+    <form action="{{ url_for('admission') }}" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="course">Course:</label>
+        <select id="course" name="course" required>
+            <option value="science">Science</option>
+            <option value="arts">Arts</option>
+            <option value="commerce">Commerce</option>
+        </select>
+
+        <button class="btn" type="submit">Submit</button>
+    </form>
+    
+    <!-- Table to display admission details -->
+    <h2 class="header">Admission Details</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Options</th>
+        </tr>
+        {% for admission_entry in admission_data %}
+        <tr>
+            <td>{{ admission_entry['name'] }}</td>
+            <td>{{ admission_entry['email'] }}</td>
+            <td>{{ admission_entry['course'] }}</td>
+            <td>
+                <a class="btn" href="{{ url_for('edit_admission', id=admission_entry['id']) }}">Edit</a>
+                <a class="btn" href="{{ url_for('delete_admission', id=admission_entry['id']) }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

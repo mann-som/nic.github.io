@@ -1,0 +1,89 @@
+/* static/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    /* margin: 0 auto; */
+    /* align-items: center;
+    justify-content: center; */
+}
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+.logo img {
+    height: 40px;
+    width: 40px;
+}
+
+nav ul {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    list-style: none;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+/* td{
+    display: flex;
+    justify-content: space-around;
+} */
+
+.btn{
+    padding: 5px 10px;
+    color: #000;
+    border: 1px #000 solid;
+    justify-content: space-around;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover{
+    padding: 5px 10px;
+    color: #ffffff;
+    border: 1px #000 solid;
+    justify-content: space-around;
+    background-color: #000;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li:not(:first-child) a:hover{
+    color: rgb(0, 0, 0);
+    background-color: #fff;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.content {
+    margin: 20px auto; /* Center the content horizontally */
+    max-width: 1000px; /* Limit the width of the content */
+}
+
+/* Add some space between the table rows */
+table tr {
+    margin-bottom: 10px;
+}
+
+/* Apply some padding and border to the table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th, table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
